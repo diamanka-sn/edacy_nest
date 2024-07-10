@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {  HttpAdapterHost, NestFactory } from '@nestjs/core';
 
-import { AppModule } from './app.module';
+import { AppModule } from './app/app.module';
 import { AllExceptionsFilter } from './core/all-exceptions.filter';
 import { ValidationPipe } from '@nestjs/common';
 
