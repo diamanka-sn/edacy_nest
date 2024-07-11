@@ -10,7 +10,8 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { CatModule } from "src/cat/cat.module";
 @Module({
   imports: [
-    MongooseModule.forRoot("mongodb://localhost:27017/edacydb"),
+    // MongooseModule.forRoot("mongodb://192.168.80.1:27017/edacydb"),
+    MongooseModule.forRoot("mongodb+srv://diamankasn:3lgS2ODRmJfMIDUx@clusteredacy.l6fzdsm.mongodb.net/?retryWrites=true&w=majority&appName=clusteredacy"),
     SharedModule,
     CoreModule,
     CatModule,

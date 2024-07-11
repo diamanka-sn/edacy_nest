@@ -1,11 +1,12 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, UseGuards } from "@nestjs/common";
 import { CatService } from "./cat.service";
 import { CreateCatDto } from "./dto/cat-dto";
 import { Cat } from "../schemas/cat.schema";
 import { CreateToyDto } from "./dto/toy-dto";
 import { ToyService } from "./toy.service";
 import { Toy } from "../schemas/toy.schema";
+import { JwtAuthGuard } from "src/core/auth/jwt-auth.guard";
 
 @Controller("cats")
 export class CatController {
@@ -14,6 +15,7 @@ export class CatController {
     private readonly toyService: ToyService,
   ) {}
 
+  @UseGuards(JwtAuthGuard)
   @Post()
   async create(@Body() cat: CreateCatDto) {
     return this.catService.create(cat);
