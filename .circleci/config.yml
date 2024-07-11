@@ -62,7 +62,7 @@ workflows:
       - test-node
       - build-node:
           filters:
-                branches:
+                branches: 
                   only: circle-ci
           requires:
             - test-node
